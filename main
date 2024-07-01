@@ -1,0 +1,679 @@
+-- Tables:
+FishingSpots = {
+    ["AncientShores"] = CFrame.new(16802, 42, 29692)
+}
+-- Variables:
+local PlayerPos = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+-- Functions: 
+function HostileESP()
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "GreatWhiteShark" then
+			Instance.new("Highlight", v)
+			v.Highlight.FillTransparency = 0.3
+			v.Highlight.FillColor = Color3.fromRGB(255, 0, 0)
+			v.Highlight.OutlineTransparency = 0
+			v.Highlight.OutlineColor = Color3.fromRGB(255, 255, 255)
+		end
+	end
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "NeonGreatWhiteShark" then
+			Instance.new("Highlight", v)
+			v.Highlight.FillTransparency = 0.3
+			v.Highlight.FillColor = Color3.fromRGB(255, 255, 255)
+			v.Highlight.OutlineTransparency = 0
+			v.Highlight.OutlineColor = Color3.fromRGB(0, 255, 255)
+		end
+	end
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "KillerWhale" then
+			Instance.new("Highlight", v)
+			v.Highlight.FillTransparency = 0.3
+			v.Highlight.FillColor = Color3.fromRGB(255, 255, 0)
+			v.Highlight.OutlineTransparency = 0
+			v.Highlight.OutlineColor = Color3.fromRGB(255, 255, 255)
+		end
+	end
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "MobyWood" then
+			Instance.new("Highlight", v)
+			v.Highlight.FillTransparency = 0.3
+			v.Highlight.FillColor = Color3.fromRGB(0, 255, 0)
+			v.Highlight.OutlineTransparency = 0
+			v.Highlight.OutlineColor = Color3.fromRGB(255, 255, 255)
+		end
+	end
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "BigGreatWhiteShark" then
+			Instance.new("Highlight", v)
+			v.Highlight.FillTransparency = 0.3
+			v.Highlight.FillColor = Color3.fromRGB(255, 255, 255)
+			v.Highlight.OutlineTransparency = 0
+			v.Highlight.OutlineColor = Color3.fromRGB(0, 0, 0)
+		end
+	end
+end
+function UnHostileESP()
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "GreatWhiteShark" then
+			for _,x in pairs(v:GetDescendants()) do
+				if x:IsA("Highlight") then
+					x:Destroy()
+				end
+			end
+		end
+	end
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "NeonGreatWhiteShark" then
+			for _,x in pairs(v:GetDescendants()) do
+				if x:IsA("Highlight") then
+					x:Destroy()
+				end
+			end
+		end
+	end
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "KillerWhale" then
+			for _,x in pairs(v:GetDescendants()) do
+				if x:IsA("Highlight") then
+					x:Destroy()
+				end
+			end
+		end
+	end
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "BigGreatWhiteShark" then
+			for _,x in pairs(v:GetDescendants()) do
+				if x:IsA("Highlight") then
+					x:Destroy()
+				end
+			end
+		end
+	end
+end
+
+
+function FreezeMobs()
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "GreatWhiteShark" then
+			for _,x in pairs(v:GetDescendants()) do
+				if x.Name == "HumanoidRootPart" then
+					if x.Anchored == false then
+						x.Anchored = true
+					end
+				end
+			end
+		end
+	end
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "BigGreatWhiteShark" then
+			for _,x in pairs(v:GetDescendants()) do
+				if x.Name == "HumanoidRootPart" then
+					if x.Anchored == false then
+						x.Anchored = true
+					end
+				end
+			end
+		end
+	end
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "NeonKillerWhale" then
+			for _,x in pairs(v:GetDescendants()) do
+				if x.Name == "HumanoidRootPart" then
+					if x.Anchored == false then
+						x.Anchored = true
+					end
+				end
+			end
+		end
+	end
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "NeonGreatWhiteShark" then
+			for _,x in pairs(v:GetDescendants()) do
+				if x.Name == "HumanoidRootPart" then
+					if x.Anchored == false then
+						x.Anchored = true
+					end
+				end
+			end
+		end
+	end
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "MobyWood" then
+			for _,x in pairs(v:GetDescendants()) do
+				if x.Name == "HumanoidRootPart" then
+					if x.Anchored == false then
+						x.Anchored = true
+					end
+				end
+			end
+		end
+	end
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "KillerWhale" then
+			for _,x in pairs(v:GetDescendants()) do
+				if x.Name == "HumanoidRootPart" then
+					if x.Anchored == false then
+						x.Anchored = true
+					end
+				end
+			end
+		end
+	end
+end
+
+function UnFreezeMobs()
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "GreatWhiteShark" then
+			for _,x in pairs(v:GetDescendants()) do
+				if x.Name == "HumanoidRootPart" then
+					if x.Anchored == true then
+						x.Anchored = false
+					end
+				end
+			end
+		end
+	end
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "BigGreatWhiteShark" then
+			for _,x in pairs(v:GetDescendants()) do
+				if x.Name == "HumanoidRootPart" then
+					if x.Anchored == true then
+						x.Anchored = false
+					end
+				end
+			end
+		end
+	end
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "NeonGreatWhiteShark" then
+			for _,x in pairs(v:GetDescendants()) do
+				if x.Name == "HumanoidRootPart" then
+					if x.Anchored == true then
+						x.Anchored = false
+					end
+				end
+			end
+		end
+	end
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "KillerWhale" then
+			for _,x in pairs(v:GetDescendants()) do
+				if x.Name == "HumanoidRootPart" then
+					if x.Anchored == true then
+						x.Anchored = false
+					end
+				end
+			end
+		end
+	end
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "MobyWood" then
+			for _,x in pairs(v:GetDescendants()) do
+				if x.Name == "HumanoidRootPart" then
+					if x.Anchored == true then
+						x.Anchored = false
+					end
+				end
+			end
+		end
+	end
+end
+
+function CompleteAncientPuzzle()
+    local PlayerPos = game.Players.LocalPlayer.Character.HumanoidRootPart
+    local SavedPos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    PlayerPos.CFrame = CFrame.new(15873, 844, 29549)
+    task.wait(.2)
+    PlayerPos.CFrame = CFrame.new(15911, 844, 29634)
+    task.wait(.2)
+    PlayerPos.CFrame = CFrame.new(15904, 844, 29560)
+    task.wait(.2)
+    PlayerPos.CFrame = CFrame.new(15881, 844, 29621)
+    task.wait(.2)
+    PlayerPos.CFrame = CFrame.new(15934, 844, 29570)
+    task.wait(.2)
+    PlayerPos.CFrame = CFrame.new(15923, 844, 29601)
+    task.wait(.2)
+    PlayerPos.CFrame = CFrame.new(15850, 844, 29611)
+    task.wait(.2)
+    PlayerPos.CFrame = CFrame.new(15861, 844, 29580)
+    task.wait(.2)
+    PlayerPos.CFrame = SavedPos
+end
+
+function TPtoAncient()
+	firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, Workspace.Islands.AncientShores.Important.JungleTempleEntrance, 1)
+	task.wait(4)
+	firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, Workspace.JungleTemple.Lobby.SFAEntrance, 1)
+end
+
+function promptaura()
+	for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
+		if v:IsA("Part") or v:IsA("MeshPart") then
+			if game:GetService("Players").LocalPlayer:DistanceFromCharacter(v.Position) <= 15 then
+				if v:FindFirstChild("ProximityPrompt") then
+					fireproximityprompt(v.ProximityPrompt,1,true)
+				elseif v:FindFirstChild("InteractionPrompt") then
+					fireproximityprompt(v.InteractionPrompt,1,true)
+				end
+			end
+		end
+	end
+end
+
+function GetAllChests()
+	local saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+	for _,v in pairs(Workspace.RandomChests:GetDescendants()) do
+		if v:IsA("Model") then
+			if v:FindFirstChild("HumanoidRootPart") then
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,3,0)
+				task.wait(.2)
+				promptaura()
+			end
+		end
+	end
+	task.wait(.4)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
+end
+
+function AntiHitbox()
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "GreatWhiteShark" then
+			for _,x in pairs(v:GetDescendants()) do
+				if x.Name == "Hitbox" then
+					x:Destroy()
+				end
+			end
+		end
+	end
+    for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "BigGreatWhiteShark" then
+			for _,x in pairs(v:GetDescendants()) do
+				if x.Name == "Hitbox" then
+					x:Destroy()
+				end
+			end
+		end
+	end
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "NeonGreatWhiteShark" then
+			for _,x in pairs(v:GetDescendants()) do
+				if x.Name == "Hitbox" then
+					x:Destroy()
+				end
+			end
+		end
+	end
+	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "KillerWhale" then
+			for _,x in pairs(v:GetDescendants()) do
+				if x.Name == "Hitbox" then
+					x:Destroy()
+				end
+			end
+		end
+	end
+    	for _,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Model") and v.Name == "NeonKillerWhale" then
+			for _,x in pairs(v:GetDescendants()) do
+				if x.Name == "Hitbox" then
+					x:Destroy()
+				end
+			end
+		end
+	end
+end
+
+-- UI:
+local Divinity = Instance.new("ScreenGui")
+local OuterFrame = Instance.new("Frame")
+local TabFrame = Instance.new("Frame")
+local TabContainer = Instance.new("Frame")
+local UIListLayout = Instance.new("UIListLayout")
+local Title = Instance.new("TextLabel")
+local GameName = Instance.new("TextLabel")
+local ButtonFrame = Instance.new("Frame")
+local ButtonContainer = Instance.new("Frame")
+local UIGridLayout = Instance.new("UIGridLayout")
+local ExtraFrame = Instance.new("Frame")
+local Close = Instance.new("TextButton")
+-- New Image Buttons:
+local ImageButton = Instance.new("ImageButton")
+local Settings = Instance.new("ImageButton")
+-- New Buttons:
+local hostileesp = Instance.new("TextButton")
+local freezemobs = Instance.new("TextButton")
+local sellall = Instance.new("TextButton")
+local droppedloot = Instance.new("TextButton")
+local sunkenship = Instance.new("TextButton")
+local gotoboat = Instance.new("TextButton")
+local getallchests = Instance.new("TextButton")
+local antihitbox = Instance.new("TextButton")
+
+Divinity.Name = "Divinity"
+Divinity.Parent = game.CoreGui
+Divinity.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+OuterFrame.Name = "OuterFrame"
+OuterFrame.Parent = Divinity
+OuterFrame.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+OuterFrame.BorderColor3 = Color3.fromRGB(80, 80, 80)
+OuterFrame.BorderSizePixel = 2
+OuterFrame.Position = UDim2.new(0.384417266, 0, 0.396979511, 0)
+OuterFrame.Size = UDim2.new(0, 462, 0, 390)
+OuterFrame.Active = true
+OuterFrame.Draggable = true
+
+TabFrame.Name = "TabFrame"
+TabFrame.Parent = OuterFrame
+TabFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+TabFrame.BorderColor3 = Color3.fromRGB(80, 80, 80)
+TabFrame.BorderSizePixel = 0
+TabFrame.Size = UDim2.new(0, 78, 0, 390)
+
+TabContainer.Name = "TabContainer"
+TabContainer.Parent = TabFrame
+TabContainer.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+TabContainer.BorderColor3 = Color3.fromRGB(75, 75, 75)
+TabContainer.BorderSizePixel = 0
+TabContainer.Position = UDim2.new(0.179487184, 0, 0.0153846154, 0)
+TabContainer.Size = UDim2.new(0, 50, 0, 378)
+
+UIListLayout.Parent = TabContainer
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 15)
+
+ImageButton.Parent = TabContainer
+ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton.BackgroundTransparency = 1.000
+ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton.BorderSizePixel = 0
+ImageButton.Size = UDim2.new(0, 50, 0, 50)
+ImageButton.Image = "rbxassetid://17860408849"
+
+Settings.Parent = TabContainer
+Settings.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Settings.BackgroundTransparency = 1.000
+Settings.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Settings.BorderSizePixel = 0
+Settings.Size = UDim2.new(0, 50, 0, 50)
+Settings.Image = "rbxassetid://17860408849"
+
+Title.Name = "Title"
+Title.Parent = OuterFrame
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Title.Position = UDim2.new(0.188311681, 0, 0, 0)
+Title.Size = UDim2.new(0, 46, 0, 38)
+Title.Font = Enum.Font.Nunito
+Title.Text = "Divinity"
+Title.TextColor3 = Color3.fromRGB(255, 0, 0)
+Title.TextSize = 18.000
+Title.TextStrokeTransparency = 0.000
+Title.TextXAlignment = Enum.TextXAlignment.Left
+
+GameName.Name = "GameName"
+GameName.Parent = OuterFrame
+GameName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GameName.BackgroundTransparency = 1.000
+GameName.BorderColor3 = Color3.fromRGB(0, 0, 0)
+GameName.Position = UDim2.new(0.16883117, 0, 0, 0)
+GameName.Size = UDim2.new(0, 384, 0, 38)
+GameName.Font = Enum.Font.Nunito
+GameName.Text = "Prison RolePlay: Escape Plan"
+GameName.TextColor3 = Color3.fromRGB(255, 255, 255)
+GameName.TextSize = 22.000
+GameName.TextStrokeTransparency = 0.000
+
+ButtonFrame.Name = "ButtonFrame"
+ButtonFrame.Parent = OuterFrame
+ButtonFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+ButtonFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ButtonFrame.Position = UDim2.new(0.186813027, 0, 0.0974358991, 0)
+ButtonFrame.Size = UDim2.new(0, 368, 0, 346)
+
+ButtonContainer.Name = "ButtonContainer"
+ButtonContainer.Parent = ButtonFrame
+ButtonContainer.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+ButtonContainer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ButtonContainer.BorderSizePixel = 0
+ButtonContainer.Position = UDim2.new(0.0175585542, 0, 0.019401418, 0)
+ButtonContainer.Size = UDim2.new(0, 355, 0, 333)
+
+UIGridLayout.Parent = ButtonContainer
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellPadding = UDim2.new(0, 27, 0, 11)
+UIGridLayout.CellSize = UDim2.new(0, 100, 0, 40)
+
+ExtraFrame.Name = "ExtraFrame"
+ExtraFrame.Parent = OuterFrame
+ExtraFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ExtraFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ExtraFrame.BorderSizePixel = 0
+ExtraFrame.Position = UDim2.new(0.16883117, 0, 0, 0)
+ExtraFrame.Size = UDim2.new(0, 2, 0, 390)
+
+Close.Name = "Close"
+Close.Parent = OuterFrame
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BackgroundTransparency = 1.000
+Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Close.BorderSizePixel = 0
+Close.Position = UDim2.new(0.917748928, 0, 0.0102564106, 0)
+Close.Size = UDim2.new(0, 30, 0, 30)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(255, 0, 0)
+Close.TextSize = 28.000
+Close.TextStrokeTransparency = 0.000
+Close.MouseButton1Click:Connect(function()
+	if game.CoreGui:FindFirstChild("Divinity") then
+		game.CoreGui.Divinity:Destroy()
+	end
+end)
+
+
+-- Buttons:
+hostileesp.Parent = ButtonContainer
+hostileesp.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+hostileesp.BorderColor3 = Color3.fromRGB(0, 0, 0)
+hostileesp.Size = UDim2.new(0, 100, 0, 0)
+hostileesp.Font = Enum.Font.SourceSans
+hostileesp.Text = "Hostile ESP: false"
+hostileesp.TextColor3 = Color3.fromRGB(255, 255, 255)
+hostileesp.TextSize = 16.000
+hostileesp.TextStrokeTransparency = 0.000
+hostileesp.MouseButton1Click:Connect(function()
+	if hostileesp.Text == "Hostile ESP: false" then
+		_G.HositleEsp = true
+		hostileesp.Text = "Hostile ESP: true"
+		while _G.HositleEsp do wait()
+			HostileESP()
+			wait(10)
+			UnHostileESP()
+		end
+	else
+		_G.HositleEsp = false
+		hostileesp.Text = "Hostile ESP: false"
+		UnHostileESP()
+	end
+end)
+
+freezemobs.Parent = ButtonContainer
+freezemobs.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+freezemobs.BorderColor3 = Color3.fromRGB(0, 0, 0)
+freezemobs.Size = UDim2.new(0, 100, 0, 0)
+freezemobs.Font = Enum.Font.SourceSans
+freezemobs.Text = "Freeze Mobs: false"
+freezemobs.TextColor3 = Color3.fromRGB(255, 255, 255)
+freezemobs.TextSize = 16.000
+freezemobs.TextStrokeTransparency = 0.000
+freezemobs.MouseButton1Click:Connect(function()
+	if freezemobs.Text == "Freeze Mobs: false" then
+		_G.FreezeMobs = true
+		freezemobs.Text = "Freeze Mobs: true"
+		while _G.FreezeMobs do wait()
+			FreezeMobs()
+			wait(5)
+		end
+	else
+		_G.FreezeMobs = false
+		freezemobs.Text = "Freeze Mobs: false"
+		UnFreezeMobs()
+	end
+end)
+
+sellall.Parent = ButtonContainer
+sellall.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+sellall.BorderColor3 = Color3.fromRGB(0, 0, 0)
+sellall.Size = UDim2.new(0, 100, 0, 0)
+sellall.Font = Enum.Font.SourceSans
+sellall.Text = "Sell All"
+sellall.TextColor3 = Color3.fromRGB(255, 255, 255)
+sellall.TextSize = 16.000
+sellall.TextStrokeTransparency = 0.000
+sellall.MouseButton1Click:Connect(function()
+	game:GetService("ReplicatedStorage"):WaitForChild("CloudFrameShared"):WaitForChild("DataStreams"):WaitForChild("processGameItemSold"):InvokeServer("SellEverything")
+end)
+
+droppedloot.Parent = ButtonContainer
+droppedloot.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+droppedloot.BorderColor3 = Color3.fromRGB(0, 0, 0)
+droppedloot.Size = UDim2.new(0, 100, 0, 0)
+droppedloot.Font = Enum.Font.SourceSans
+droppedloot.Text = "Get Dropped Loot"
+droppedloot.TextColor3 = Color3.fromRGB(255, 255, 255)
+droppedloot.TextSize = 16.000
+droppedloot.TextStrokeTransparency = 0.000
+droppedloot.MouseButton1Click:Connect(function()
+	local saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+	for _,v in pairs(workspace.DroppedItems:GetDescendants()) do
+		if v:IsA("Model") then
+            if v:FindFirstChild("MeshPart") then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.MeshPart.CFrame * CFrame.new(0,-5,0)
+				task.wait(.2)
+            end
+        end
+    end
+	task.wait(.2)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
+end)
+
+sunkenship.Parent = ButtonContainer
+sunkenship.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+sunkenship.BorderColor3 = Color3.fromRGB(0, 0, 0)
+sunkenship.Size = UDim2.new(0, 100, 0, 0)
+sunkenship.Font = Enum.Font.SourceSans
+sunkenship.Text = "TP Sunken Ship"
+sunkenship.TextColor3 = Color3.fromRGB(255, 255, 255)
+sunkenship.TextSize = 16.000
+sunkenship.TextStrokeTransparency = 0.000
+sunkenship.MouseButton1Click:Connect(function()
+    for i,v in pairs(game.Workspace:GetChildren()) do
+        if string.find(v.Name, "ShipModel") then
+            local newFrame = v.HitBox.CFrame
+            if game.Players.LocalPlayer.Character.Humanoid.Sit then
+                game.Players.LocalPlayer.Character.Humanoid.Sit = false
+            end
+            wait()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = newFrame
+            return
+        end
+    end
+end)
+
+gotoboat.Parent = ButtonContainer
+gotoboat.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+gotoboat.BorderColor3 = Color3.fromRGB(0, 0, 0)
+gotoboat.Size = UDim2.new(0, 100, 0, 0)
+gotoboat.Font = Enum.Font.SourceSans
+gotoboat.Text = "TP to Boat"
+gotoboat.TextColor3 = Color3.fromRGB(255, 255, 255)
+gotoboat.TextSize = 16.000
+gotoboat.TextStrokeTransparency = 0.000
+gotoboat.MouseButton1Click:Connect(function()
+    if game.Players.LocalPlayer.Name == "Royalty_Fate" then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Workspace["Royalty_Fate's Boat"].Hull.CFrame * CFrame.new(0,3,0)
+    elseif game.Players.LocalPlayer.Name == "Thomas_Blx" then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Workspace["Thomas_Blx's Boat"].Hull.CFrame * CFrame.new(0,3,0)
+    end
+end)
+
+getallchests.Parent = ButtonContainer
+getallchests.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+getallchests.BorderColor3 = Color3.fromRGB(0, 0, 0)
+getallchests.Size = UDim2.new(0, 100, 0, 0)
+getallchests.Font = Enum.Font.SourceSans
+getallchests.Text = "Collect Chests"
+getallchests.TextColor3 = Color3.fromRGB(255, 255, 255)
+getallchests.TextSize = 16.000
+getallchests.TextStrokeTransparency = 0.000
+getallchests.MouseButton1Click:Connect(function()
+	GetAllChests()
+end)
+
+antihitbox.Parent = ButtonContainer
+antihitbox.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+antihitbox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+antihitbox.Size = UDim2.new(0, 100, 0, 0)
+antihitbox.Font = Enum.Font.SourceSans
+antihitbox.Text = "Anti-Hitbox: false"
+antihitbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+antihitbox.TextSize = 16.000
+antihitbox.TextStrokeTransparency = 0.000
+antihitbox.MouseButton1Click:Connect(function()
+	if antihitbox.Text == "Anti-Hitbox: false" then
+		_G.AntiHitbox = true
+		antihitbox.Text = "Anti-Hitbox: true"
+		while _G.AntiHitbox do wait()
+			AntiHitbox()
+			wait(10)
+		end
+	else
+		_G.AntiHitbox = false
+		antihitbox.Text = "Anti-Hitbox: false"
+	end
+end)
+
+-- Ignore:
+local function REMGR_fake_script() -- GameName.LocalScript 
+	local script = Instance.new('LocalScript', GameName)
+	local Gamename = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+
+	script.Parent.Text = Gamename
+end
+coroutine.wrap(REMGR_fake_script)()
+
+local function CreateRainbowFrame()
+	local script = Instance.new('LocalScript', OuterFrame)
+	local TweenService = game:GetService('TweenService')
+	local object = script.Parent
+	local tweenInfo = TweenInfo.new()
+
+	while true do
+		local r, g, b = math.random(), math.random(), math.random()
+		local goal = {BorderColor3 = Color3.new(r, g, b)}
+
+		local tween = TweenService:Create(object, tweenInfo, goal)
+		tween:Play()
+		tween.Completed:Wait()
+	end
+end
+coroutine.wrap(CreateRainbowFrame)()
+
+
+-- Toggle UI:
+local UserInputService = game:GetService("UserInputService")
+local gui = game.CoreGui.Divinity
+local toggleKey = Enum.KeyCode.Insert
+
+local toggle = true
+
+UserInputService.InputBegan:Connect(function(input)
+	if input.KeyCode == toggleKey then
+		toggle = not toggle
+		gui.Enabled = toggle
+	end
+end)
